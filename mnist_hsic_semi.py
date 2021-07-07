@@ -447,16 +447,16 @@ def main():
         
         np.random.shuffle(id_list)
         # unsupervised
-        # for j in range(int(num_batches)):
-        #     indices = id_list[j*args.batch_size:(j+1)*args.batch_size]
-        #     # update Ku_batch as well
-        #     update_Ku_batch(indices)
-        #     x_batch = x_unsup_sub[indices]
-        #     # give it dummy y as y is not needed in unsupervised case
-        #     y_dummy_batch = np.ones(x_batch.shape[0])
-        #     y_dummy_batch = labels_to_categorical(y_dummy_batch, old_classes)
-        #     hsic_batch_loss = u_hsic_model.train_on_batch(x_batch, y_dummy_batch)
-        #     print('Unsupervised hsic loss : {}'.format(hsic_batch_loss[0]))
+        for j in range(int(num_batches)):
+            indices = id_list[j*args.batch_size:(j+1)*args.batch_size]
+            # update Ku_batch as well
+            update_Ku_batch(indices)
+            x_batch = x_unsup_sub[indices]
+            # give it dummy y as y is not needed in unsupervised case
+            y_dummy_batch = np.ones(x_batch.shape[0])
+            y_dummy_batch = labels_to_categorical(y_dummy_batch, old_classes)
+            hsic_batch_loss = u_hsic_model.train_on_batch(x_batch, y_dummy_batch)
+            print('Unsupervised hsic loss : {}'.format(hsic_batch_loss[0]))
 
         # Update U
         phi_x = feature_extractor.predict(x_unsup_sub)
