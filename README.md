@@ -1,5 +1,5 @@
 
-# Deep Bayesian Unsupervised Lifelong Learning
+# Open-World Class Discovery with Kernel Networks
 
 This repo contains code and necessary files to reproduce the result in the paper, [*Open-World Class Discovery with Kernel Networks*](https://www.computer.org/csdl/proceedings-article/icdm/2020/831600a631/1r54HgwR0sw) ([Arxiv version](https://arxiv.org/pdf/2012.06957.pdf)).
 
